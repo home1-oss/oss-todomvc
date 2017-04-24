@@ -1,0 +1,8 @@
+
+target/
+publish/
+node/
+node_modules/
+etc/
+
+npm-debug.log

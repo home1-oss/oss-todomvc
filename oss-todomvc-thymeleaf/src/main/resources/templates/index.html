@@ -1,0 +1,174 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8"/>
+  <title>Thymeleaf • TodoMVC</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/login.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
+
+  <script src="/webjars/jquery/jquery.js"></script>
+
+</head>
+<body>
+<div>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand"> TodoMVC </a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#"><span id="display-username" th:text="${loginText}"></span></a>
+          </li>
+          <a th:href="@{'/auth/logout?redirect=/login.html'}">
+            <button type="button" class="btn btn-default navbar-btn">退出</button>
+          </a>
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="mvc-todo-container">
+    <section id="todoapp">
+      <header>
+        <h1>todos</h1>
+        <form method="POST" action="/action/add_todo" onsubmit="return checkCreateTodo(this)">
+          <input type="hidden" name="filter" th:if="${filter != null}" th:value="${filter}"/>
+          <input id="new-todo" name="title" placeholder="What needs to be done?" autofocus="autofocus"/>
+        </form>
+      </header>
+      <section id="main">
+        <input id="toggle-all" type="checkbox"
+               th:checked="${toggleAllChecked}"
+               th:onclick="'javascript:toggleAll(this, \'' + ${filter} + '\')'"/>
+        <label for="toggle-all">Mark all as complete</label>
+
+        <ul id="todo-list">
+
+          <div th:each="todo:${todos}">
+            <li th:class="${todo.completed ? 'completed' : ''}">
+              <div class="view">
+
+                <input class="toggle" type="checkbox" th:checked="${todo.completed}"
+                       th:onclick="'javascript:updateTodo(\''+ ${todo.id} +'\', \''+ ${todo.title} +'\', \''+ ${!todo.completed} +'\', \''+ ${filter} +'\')'"/>
+
+                <label th:text="${todo.title}"></label>
+
+                <a th:href="@{/action/delete_todo(id=${todo.id},filter=${filter})}">
+                  <button class="destroy"></button>
+                </a>
+              </div>
+              <input class="edit" th:value="${todo.title}"
+                     th:onkeydown="'javascript:updateTodoTitle(event, \''+ ${todo.id} +'\', \''+ ${todo.completed} +'\', \''+ ${filter} +'\')'"
+                     th:onblur="'javascript:updateTodoTitle(event, \''+ ${todo.id} +'\', \''+ ${todo.completed} +'\', \''+ ${filter} +'\')'"/>
+            </li>
+          </div>
+
+        </ul>
+      </section>
+
+      <div id="footer" th:class="${ hasTodos ? '' : 'hidden'}">
+        <span id="todo-count" th:text="${activeTodosLeftText}"> </span>
+        <ul id="filters">
+          <li>
+            <a th:class="${filter == 'all' ? 'selected' : ''}" href="/index.html?filter=all">All</a>
+          </li>
+          <li>
+            <a th:class="${filter == 'active' ? 'selected': ''}" href="/index.html?filter=active">Active </a>
+          </li>
+          <li>
+            <a th:class="${filter == 'completed' ? 'selected' : ''}" href="/index.html?filter=completed">Completed</a>
+          </li>
+        </ul>
+
+        <div th:class="${hasCompletedTodos ? '' : 'hidden'}">
+          <a href="/action/clear_completed">
+            <button id="clear-completed">Clear completed</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer id="info">
+      <p>This is todo-list page</p>
+      <p>Created by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+      <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+    </footer>
+  </div>
+</div>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+  function checkCreateTodo(form) {
+    return form.title.value != null && form.title.value.trim() != "";
+  }
+  /*]]>*/
+
+
+</script>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+  function updateTodo(id, title, completed, filter) {
+    if (title.trim() == "") {
+        window.location.href="/action/delete_todo?id=" + id + "&filter=" + filter;
+    } else {
+      window.location.href="/action/update_todo?id=" + id + "&title=" + title + "&completed=" + completed + "&filter="
+          + filter;
+    }
+  }
+/*]]>*/
+
+</script>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+  function updateTodoTitle(event, id, completed, filter) {
+    if (event.which == 0 || event.which == 13 || event.which == 27) {
+      var changedTitle = event.target.value.trim();
+      if (changedTitle == "") {
+        window.location.href="/action/delete_todo?id=" + id + "&filter=" + filter;
+      } else {
+        window.location.href="/action/update_todo?id=" + id + "&title=" + changedTitle + "&completed=" + completed +
+            "&filter=" + filter;
+      }
+    }
+  }
+/*]]>*/
+
+
+</script>
+
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+  function toggleAll(c, filter) {
+    window.location.href="/action/toggle_all?checked=" + c.checked + "&filter=" + filter;
+  }
+/*]]>*/
+
+
+</script>
+
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+  $(document).ready(function(e) {
+    $('#todo-list').on('dblclick', 'label', function(e) {
+      var $input = $(e.target).closest('li').addClass('editing').find('.edit');
+      $input.val($input.val()).focus();
+    });
+  });
+/*]]>*/
+
+
+</script>
+
+
+</body>
+</html>

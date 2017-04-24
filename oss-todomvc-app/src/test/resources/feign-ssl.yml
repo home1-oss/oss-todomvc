@@ -1,0 +1,80 @@
+# todomvc-app-config
+
+app:
+  logLevel: INFO
+  security:
+    enabled: false
+  type: RESTFUL
+
+debug: true
+
+server:
+  port: ${app.port:8080}
+  ssl:
+    key-store: classpath:server.jks
+    key-store-password: 123456
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:user_pass@127.0.0.1:8761/eureka/    # 指定注册中心的地址
+  instance:
+    preferIpAddress: true
+
+
+
+
+spring.datasource:
+  continue-on-error: false # Do not stop if an error occurs while initializing the database.
+  #data:  # Data (DML) script resource reference.
+  initialize: false # Populate the database using 'data.sql'.
+  jmx-enabled: false # Enable JMX support (if provided by the underlying pool).
+  #jndi-name:  # JNDI location of the datasource. Class, url, username & password are ignored when set.
+  maximum-pool-size: 10
+  minimum-idle: 5
+  name: dataSource
+  test-while-idle: true
+  time-between-eviction-runs-millis: 1
+  validation-query: 'SELECT 1'
+  type: 'com.zaxxer.hikari.HikariDataSource'
+  driver-class-name: 'org.h2.Driver'
+  url: 'jdbc:h2:~/data/oss-todomvc-app/h2' #'jdbc:h2:mem:mydb'
+  username: sa
+  #password:
+
+# H2 Web Console (H2ConsoleProperties)
+spring.h2.console:
+  enabled: true # Enable the console.
+  path: '/h2-console' # Path at which the console will be available.
+
+# JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
+spring.data.jpa.repositories.enabled: true # Enable JPA repositories.
+spring.jpa:
+  database: H2 # Target database to operate on, auto-detected by default. Can be alternatively set using the "databasePlatform" property.
+  database-platform: 'org.hibernate.dialect.H2Dialect' # Name of the target database to operate on, auto-detected by default. Can be alternatively set using the "Database" enum.
+  generate-ddl: true # Initialize the schema on startup.
+  hibernate.ddl-auto: create-drop # DDL mode. This is actually a shortcut for the "hibernate.hbm2ddl.auto" property. Default to "create-drop" when using an embedded database, "none" otherwise.
+  hibernate.naming-strategy: 'org.hibernate.cfg.ImprovedNamingStrategy' # Naming strategy fully qualified name.
+  #hibernate.naming-strategy: 'spring.jpa.hibernate.naming_strategy=org.hibernate.cfg.EJB3NamingStrategy' # uppercase name
+  #open-in-view: true # Register OpenEntityManagerInViewInterceptor. Binds a JPA EntityManager to the thread for the entire processing of the request.
+  show-sql: true # Enable logging of SQL statements.
+  #properties.*: # Additional native properties to set on the JPA provider.
+
+---
+spring:
+  profiles: production.env
+
+spring.datasource:
+  driver-class-name: com.mysql.jdbc.Driver
+  url: jdbc:mysql://local-mysql:3306/oss-todomvc-app?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+  username: root
+  password: root
+
+spring.h2.console.enabled: false
+
+spring.jpa:
+  database: MYSQL
+  database-platform: 'org.hibernate.dialect.MySQL5InnoDBDialect'
+  generate-ddl: false
+  hibernate.ddl-auto: none
+  show-sql: false

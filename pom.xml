@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.yirendai.infra</groupId>
+        <artifactId>oss-build</artifactId>
+        <version>1.0.8.OSS-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>oss-todomvc</artifactId>
+    <name>oss-todomvc</name>
+    <packaging>pom</packaging>
+    <version>1.0.6.OSS-SNAPSHOT</version>
+
+    <scm>
+        <connection>scm:git:https://github.com/Yirendai/oss-todomvc.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/Yirendai/oss-todomvc.git</developerConnection>
+        <url>https://github.com/Yirendai/oss-todomvc</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/Yirendai/oss-todomvc/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/Yirendai/oss-todomvc</url>
+    </ciManagement>
+
+    <properties>
+        <oss-release.version>1.0.6.OSS-SNAPSHOT</oss-release.version>
+        <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.yirendai.infra</groupId>
+                <artifactId>oss-release-spring-boot-${spring-boot.version}</artifactId>
+                <version>${oss-release.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oss-todomvc-security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oss-todomvc-sdk</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oss-todomvc-jquery</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oss-todomvc-react</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>oss-todomvc-app</module>
+        <!--module>oss-todomvc-angular</module-->
+        <module>oss-todomvc-jquery</module>
+        <module>oss-todomvc-react</module>
+        <module>oss-todomvc-sdk</module>
+        <module>oss-todomvc-security</module>
+        <module>oss-todomvc-thymeleaf</module>
+        <module>oss-todomvc-gateway</module>
+    </modules>
+</project>

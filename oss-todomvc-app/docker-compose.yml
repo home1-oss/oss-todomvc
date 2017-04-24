@@ -1,0 +1,35 @@
+
+version: '2.1'
+services:
+  todomvc-app:
+    image: ${DOCKER_REGISTRY:-registry.docker.local}/oss-todomvc-app:${PROJECT_VERSION:-latest}
+    restart: 'always'
+    container_name: ${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-app}
+    hostname: ${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-app}
+    ports:
+    - "${EUREKA_INSTANCE_NONSECUREPORT:-8080}:${SERVER_PORT:-8080}"
+    volumes:
+    - oss-todomvc-app-volume:/root/data
+    environment:
+    - CONFIG_SERVER_PASSWORD=${CONFIG_SERVER_PASSWORD:-user_pass}
+    - CONFIG_SERVER_USERNAME=${CONFIG_SERVER_USERNAME:-user}
+    - EUREKA_INSTANCE_NONSECUREPORT=${EUREKA_INSTANCE_NONSECUREPORT:-8080}
+    - EUREKA_INSTANCE_HOSTNAME=${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-app}
+    - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:-http://user:user_pass@local-eureka:8761/eureka/}
+    - JAVA_DEBUG_PORT=${JAVA_DEBUG_PORT:-5005}
+    - MANAGEMENT_CONTEXTPATH=${MANAGEMENT_CONTEXTPATH}
+    - MANAGEMENT_PORT=${MANAGEMENT_PORT:-8080}
+    - SERVER_CONTEXTPATH=${SERVER_CONTEXTPATH}
+    - SERVER_PORT=${SERVER_PORT:-8080}
+    - SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID=${SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID:-local-configserver}
+    - SPRING_CLOUD_CONFIG_LABEL=${SPRING_CLOUD_CONFIG_LABEL:-develop}
+    - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE:-development.env}
+    - SPRING_RABBITMQ_HOST=${SPRING_RABBITMQ_HOST:-local-cloudbus}
+    
+volumes:
+  oss-todomvc-app-volume: {}
+
+networks:
+  default:
+      external:
+            name: oss-network

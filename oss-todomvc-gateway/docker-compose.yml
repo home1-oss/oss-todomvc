@@ -1,0 +1,37 @@
+
+version: '2.1'
+services:
+  todomvc-gateway:
+    image: ${DOCKER_REGISTRY:-registry.docker.local}/oss-todomvc-gateway:${PROJECT_VERSION:-latest}
+    restart: 'always'
+    container_name: ${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-gateway}
+    hostname: ${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-gateway}
+    ports:
+    - "${EUREKA_INSTANCE_NONSECUREPORT:-8090}:${SERVER_PORT:-8090}"
+    volumes:
+    - oss-todomvc-gateway-volume:/root/data
+    external_links:
+     - local-oss-todomvc-app:local-oss-todomvc-app
+    environment:
+    - CONFIG_SERVER_PASSWORD=${CONFIG_SERVER_PASSWORD:-user_pass}
+    - CONFIG_SERVER_USERNAME=${CONFIG_SERVER_USERNAME:-user}
+    - EUREKA_INSTANCE_NONSECUREPORT=${EUREKA_INSTANCE_NONSECUREPORT:-8090}
+    - EUREKA_INSTANCE_HOSTNAME=${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-gateway}
+    - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:-http://user:user_pass@local-eureka:8761/eureka/}
+    - JAVA_DEBUG_PORT=${JAVA_DEBUG_PORT:-5005}
+    - MANAGEMENT_CONTEXTPATH=${MANAGEMENT_CONTEXTPATH}
+    - MANAGEMENT_PORT=${MANAGEMENT_PORT:-8090}
+    - SERVER_CONTEXTPATH=${SERVER_CONTEXTPATH}
+    - SERVER_PORT=${SERVER_PORT:-8090}
+    - SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID=${SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID:-local-configserver}
+    - SPRING_CLOUD_CONFIG_LABEL=${SPRING_CLOUD_CONFIG_LABEL:-develop}
+    - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE:-development.env}
+    - SPRING_RABBITMQ_HOST=${SPRING_RABBITMQ_HOST:-local-cloudbus}
+
+volumes:
+  oss-todomvc-gateway-volume: {}
+
+networks:
+  default:
+    external:
+      name: oss-network

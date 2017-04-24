@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-framework="jquery">
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery • TodoMVC</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div>
+      <div id="login" class="mvc-login">
+        <div>
+          <img src="images/logo-icon.png">
+        </div>
+
+        <section>
+          <form onsubmit="check(this); return false">
+            <input id="username" class="mvc-login-input" placeholder="用户名" autofocus/>
+            <input id="password" class="mvc-login-input" type="password" placeholder="密码" autofocus/>
+            <br/>
+            <br/>
+            <br/>
+            <input type="submit" class="sign-button" value="登录"/>
+          </form>
+        </section>
+      </div>
+
+      <footer id="info">
+        <p>This is a form login page</p>
+        <p>Created by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+        <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+      </footer>
+    </div>
+
+    <script src="/webjars/jquery/jquery.js"></script>
+    <script src="js/authenticate.js"></script>
+
+  </body>
+</html>
+

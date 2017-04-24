@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.yirendai.infra</groupId>
+    <artifactId>oss-todomvc</artifactId>
+    <version>1.0.6.OSS-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>oss-todomvc-sdk</artifactId>
+  <name>oss-todomvc-sdk</name>
+  <packaging>jar</packaging>
+
+  <properties>
+    <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
+  </properties>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-httpclient</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-feign</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>

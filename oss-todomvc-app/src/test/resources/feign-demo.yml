@@ -1,0 +1,27 @@
+server:   
+  error:
+    includeStacktrace: ALWAYS
+
+app: 
+  port: 8090
+  logLevel: INFO
+  security:
+    enabled: false
+  type: RESTFUL
+
+app.error.handlerEnabled: false    
+      
+spring:    
+  application:
+    name: oss-todomvc-app-feign
+eureka:
+  client: 
+    serviceUrl:
+      defaultZone: http://user:user_pass@local-eureka:8761/eureka/
+  instance:
+    preferIpAddress:  true 
+ribbon:
+  eureka:
+    enabled: true #默认为true。如果设置为false，Ribbon将不 会从Eureka中获得服务列表，而是使用静态配置的服务列表。静态服务列表可使用：< client>.ribbon.listOfServers来指定。参考：http://projects.spring.i o/spring-cloud/docs/1.0.3/spring-cloud.html#spring-cloud-ribbonwithout-eureka
+    
+### 参考：https://spring.io/guides/gs/client-side-load-balancing/

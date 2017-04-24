@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css" rel="stylesheet"/>
+
+    <title>TodoMVC mainpage</title>
+</head>
+<body>
+
+<div class="container">
+    <div style="margin-top: 30px"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <img src="images/todomvc-logo.svg">
+        </div>
+    </div>
+
+    <div style="margin-top: 30px"></div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <h1>TodoMVC简介</h1>
+            <hr/>
+
+            <p>
+                Developers these days are spoiled with choice when it comes to selecting an MV* framework for
+                structuring and organizing their JavaScript web apps.
+            </p>
+
+            <p>
+                Backbone, Ember, AngularJS… the list of new and stable solutions continues to grow, but just how do you
+                decide on which to use in a sea of so many options?
+            </p>
+
+            <p>
+                To help solve this problem, we created TodoMVC - a project which offers the same Todo application
+                implemented using MV* concepts in most of the popular JavaScript MV* frameworks of today.
+            </p>
+
+            <h3><a href="http://www.todomvc.com" target="_blank"><span>官网地址</span></a></h3>
+        </div>
+
+        <div class="col-xs-6">
+            <h1>oss-todomvc简介</h1>
+            <hr/>
+
+            <p>
+                oss-todomvc主要目的如下:
+            <ul>
+                <li> 演示oss的服务/框架/库的使用</li>
+                <li> 演示不同的前端方案与后端接入方式的区别</li>
+                <li> 作为样例代码,供接入oss框架的开发人员快速入门</li>
+            </ul>
+                我们选取了todomvc的jquery和react项目,同时我们创建了通过后端模板技术实现的 oss-todomvc-thymeleaf 项目.在原有TodoMVC项目的基础之上,我们扩充了如下功能:
+            <ul>
+                <li>登录页面和登录/登出/用户身份认证逻辑</li>
+                <li>从java后端获取数据,替代之前将存储放在localStorage的方案</li>
+                <li>加入了错误反馈</li>
+                <li>......</li>
+            </ul>
+
+            </p>
+
+            <h3><a target="_blank" href="https://github.com/Yirendai/oss-todomvc"><span>项目地址</span></a></h3>
+
+        </div>
+    </div>
+
+    <div style="margin-top: 30px"></div>
+    <h1>样例</h1>
+    <hr/>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="images/jquery.gif">
+
+                <div class="caption">
+                    <h3>oss-todomvc-jquery</h3>
+                    <p>
+                      <a href="webjars/oss-todomvc-jquery/login.html" target="_blank" class="btn btn-primary" role="button">进入应用</a>
+                      <a href="https://github.com/Yirendai/oss-todomvc/tree/develop/oss-todomvc-jquery" target="_blank" class="btn btn-default" role="button">项目源码</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="images/react.svg">
+
+                <div class="caption">
+                    <h3>oss-todomvc-react</h3>
+                    <p>
+                      <a href="webjars/oss-todomvc-react/index.html" target="_blank" class="btn btn-primary"
+                         role="button">进入应用</a>
+                      <a href="https://github.com/Yirendai/oss-todomvc/tree/develop/oss-todomvc-react" class="btn btn-default" target="_blank" role="button">项目源码</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

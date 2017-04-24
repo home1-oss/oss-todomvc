@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Error message</title>
+
+  <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<h1>出错了！！！</h1>
+
+<table class="table table-striped">
+  <thead>
+  <td>type</td>
+  <td>description</td>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td>Time</td>
+    <td th:text="${#calendars.format(resolvedError.timestamp)}">Status Code</td>
+  </tr>
+
+  <tr>
+    <td>Status Code</td>
+    <td th:text="${resolvedError.status}">Status Code</td>
+  </tr>
+
+  <tr>
+    <td>localizedMessage</td>
+    <td th:text="${resolvedError.localizedMessage}"></td>
+  </tr>
+
+  <tr>
+    <td>all</td>
+    <td th:text="${resolvedError}"></td>
+  </tr>
+
+  </tbody>
+</table>
+
+</body>
+</html>
