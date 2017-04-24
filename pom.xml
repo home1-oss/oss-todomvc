@@ -16,17 +16,17 @@
     <version>1.0.6.OSS-SNAPSHOT</version>
 
     <scm>
-        <connection>scm:git:https://github.com/Yirendai/oss-todomvc.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/Yirendai/oss-todomvc.git</developerConnection>
-        <url>https://github.com/Yirendai/oss-todomvc</url>
+        <connection>scm:git:https://github.com/home1-oss/oss-todomvc.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/home1-oss/oss-todomvc.git</developerConnection>
+        <url>https://github.com/home1-oss/oss-todomvc</url>
     </scm>
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/Yirendai/oss-todomvc/issues</url>
+        <url>https://github.com/home1-oss/oss-todomvc/issues</url>
     </issueManagement>
     <ciManagement>
         <system>Travis CI</system>
-        <url>https://travis-ci.org/Yirendai/oss-todomvc</url>
+        <url>https://travis-ci.org/home1-oss/oss-todomvc</url>
     </ciManagement>
 
     <properties>
