@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>oss-todomvc</artifactId>
-        <groupId>com.yirendai.infra</groupId>
+        <groupId>cn.home1</groupId>
         <version>1.0.6.OSS-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -50,7 +50,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.yirendai.todomvc.TodomvcGatewayApplication</mainClass>
+                    <mainClass>cn.home1.todomvc.TodomvcGatewayApplication</mainClass>
                     <classifier>exec</classifier>
                     <layout>ZIP</layout>
                     <excludes>
@@ -107,15 +107,15 @@
     <dependencies>
         <!-- oss dependencies -->
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-errorhandle-spring-boot-${spring-boot.version}</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-webmvc-spring-boot-${spring-boot.version}</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-swagger-spring-boot-${spring-boot.version}</artifactId>
             <scope>runtime</scope>
         </dependency>
@@ -202,7 +202,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-adminclient-spring-boot-${spring-boot.version}</artifactId>
         </dependency>
     </dependencies>

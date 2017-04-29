@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.yirendai.infra</groupId>
+        <groupId>cn.home1</groupId>
         <artifactId>oss-todomvc</artifactId>
         <version>1.0.6.OSS-SNAPSHOT</version>
     </parent>
@@ -72,7 +72,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.yirendai.todomvc.TodomvcApplication</mainClass>
+                    <mainClass>cn.home1.todomvc.TodomvcApplication</mainClass>
                     <classifier>exec</classifier>
                     <layout>ZIP</layout>
                     <excludes>
@@ -194,21 +194,21 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-errorhandle-spring-boot-${spring-boot.version}</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-webmvc-spring-boot-${spring-boot.version}</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-adminclient-spring-boot-${spring-boot.version}</artifactId>
             <scope>runtime</scope>
         </dependency>
 
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-swagger-spring-boot-${spring-boot.version}</artifactId>
             <scope>runtime</scope>
         </dependency>
