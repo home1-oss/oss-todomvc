@@ -2,7 +2,7 @@
 version: '2.1'
 services:
   todomvc-gateway:
-    image: ${DOCKER_REGISTRY:-registry.docker.local}/oss-todomvc-gateway:${PROJECT_VERSION:-latest}
+    image: home1oss/oss-todomvc-gateway:${PROJECT_VERSION:-latest}
     restart: 'always'
     container_name: ${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-gateway}
     hostname: ${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-gateway}
