@@ -2,7 +2,7 @@
 version: '2.1'
 services:
   todomvc-thymeleaf:
-    image: ${DOCKER_REGISTRY:-registry.docker.local}/oss-todomvc-thymeleaf:${PROJECT_VERSION:-latest}
+    image: home1oss/oss-todomvc-thymeleaf:${PROJECT_VERSION:-latest}
     restart: 'always'
     container_name: ${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-thymeleaf}
     hostname: ${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-thymeleaf}
