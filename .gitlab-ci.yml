@@ -2,11 +2,11 @@
 # see: https://gitlab.com/gitlab-org/gitlab-ce/issues/3423
 
 before_script:
-  - export OSS_BUILD_REF_BRANCH="develop"
-  - export OSS_BUILD_CONFIG_REF_BRANCH="develop"
-  - export GIT_REPO_OWNER="home1-oss"                   # 所构建项目owner
-  - export OSS_BUILD_GIT_SERVICE="https://github.com"  # oss-build项目地址
-  - export OSS_BUILD_GIT_REPO_OWNER="home1-oss"        # oss-build ownner
+- export OSS_BUILD_REF_BRANCH="develop"
+- export OSS_BUILD_CONFIG_REF_BRANCH="develop"
+- export GIT_REPO_OWNER="home1-oss"                   # 所构建项目owner
+- export OSS_BUILD_GIT_SERVICE="https://github.com"  # oss-build项目地址
+- export OSS_BUILD_GIT_REPO_OWNER="home1-oss"        # oss-build ownner
 
 stages:
 - analysis
