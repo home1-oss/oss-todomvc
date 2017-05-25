@@ -23,6 +23,8 @@ env:
   - GIT_SERVICE=https://github.com
   - INFRASTRUCTURE=github
   - MAVEN_SKIP_RC=true
+  - export OSS_BUILD_GIT_SERVICE="https://github.com"  # oss-build项目地址
+  - export OSS_BUILD_GIT_REPO_OWNER="home1-oss"        # oss-build ownner
 install: true
 jdk:
 - oraclejdk8
