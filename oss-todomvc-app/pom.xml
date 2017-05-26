@@ -122,6 +122,7 @@
                                 <profile>it.env</profile>
                             </profiles>
                             <skip>${maven.integration-test.skip}</skip>
+                            <maxAttempts>600000</maxAttempts>
                         </configuration>
                     </execution>
                     <execution>
