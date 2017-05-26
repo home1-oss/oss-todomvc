@@ -1,4 +1,4 @@
-FROM ${docker.registry}/java:oracle-8u101-jdk-alpine
+FROM home1oss/java:oracle-8u101-jdk-alpine
 
 USER root
 WORKDIR /root/
