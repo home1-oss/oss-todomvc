@@ -33,6 +33,7 @@ on_develop_push:
   script:
   - echo "on_develop_push"
   - bash ci.sh publish_snapshot
+  - bash ci.sh publish_maven_site
   only:
   - develop
   dependencies:
