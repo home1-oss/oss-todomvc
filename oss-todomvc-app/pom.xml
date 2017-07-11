@@ -11,15 +11,26 @@
 
     <artifactId>oss-todomvc-app</artifactId>
     <name>oss-todomvc-app</name>
-    <packaging>jar</packaging>
 
     <!--properties>
-        <eureka.service.url>http://user:user_pass@local-eureka:8761/eureka/</eureka.service.url>
-        <configserver.service.id>local-configserver</configserver.service.id>
-        <cloudbus.service.url>local-cloudbus</cloudbus.service.url>
+        <eureka.service.url>http://user:user_pass@eureka.local:8761/eureka/</eureka.service.url>
+        <configserver.service.id>configserver.local</configserver.service.id>
+        <cloudbus.service.url>cloudbus.local</cloudbus.service.url>
     </properties-->
 
     <profiles>
+        <profile>
+            <id>libsecurity</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>oss-todomvc-security</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
         <profile>
             <id>oauth2</id>
             <activation>
@@ -31,18 +42,6 @@
                 <dependency>
                     <groupId>org.springframework.security.oauth</groupId>
                     <artifactId>spring-security-oauth2</artifactId>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>libsecurity</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>${project.groupId}</groupId>
-                    <artifactId>oss-todomvc-security</artifactId>
                 </dependency>
             </dependencies>
         </profile>

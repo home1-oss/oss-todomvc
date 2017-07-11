@@ -14,11 +14,6 @@
   <name>oss-todomvc-sdk</name>
   <packaging>jar</packaging>
 
-  <properties>
-    <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
-  </properties>
-
-
   <dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -34,5 +29,4 @@
       <artifactId>spring-cloud-starter-feign</artifactId>
     </dependency>
   </dependencies>
-
 </project>

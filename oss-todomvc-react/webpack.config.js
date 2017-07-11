@@ -95,8 +95,8 @@ const dev = {
         historyApiFallback: true,
         port: 3000,
         proxy: {
-          '/api/*': 'http://local-oss-todomvc-gateway:8090/',
-          '/todomvc/*': 'http://local-oss-todomvc-gateway:8090/'
+          '/api/*': 'http://oss-todomvc-gateway.local:8090/',
+          '/todomvc/*': 'http://oss-todomvc-gateway.local:8090/'
         }
     },
 

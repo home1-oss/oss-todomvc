@@ -102,8 +102,8 @@ oss-todomvc所有的web service统一从configserver拉取配置，使用eureka�
     docker-compose pull && docker-compose up -d
 
 ### 访问
-+ oss-todomvc-gateway 的前端页面包括 oss-todomvc-jquery 和 oss-todomvc-react 的入口，用户可以在浏览器地址栏里面输入 http://local-oss-todomvc-gateway:8090/index.html 访问
-+ oss-todomvc-thymeleaf 的前端用于演示基于模板的 todomvc 实现，用户可以在浏览器地址栏里面输入 http://local-oss-todomvc-thymeleaf:8083/login.html 进行访问
++ oss-todomvc-gateway 的前端页面包括 oss-todomvc-jquery 和 oss-todomvc-react 的入口，用户可以在浏览器地址栏里面输入 http://oss-todomvc-gateway.local:8090/index.html 访问
++ oss-todomvc-thymeleaf 的前端用于演示基于模板的 todomvc 实现，用户可以在浏览器地址栏里面输入 http://oss-todomvc-thymeleaf.local:8083/login.html 进行访问
 
 测试用户名及密码：
 + 用户名： user0 ~ user9

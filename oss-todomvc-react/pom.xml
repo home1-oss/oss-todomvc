@@ -17,8 +17,10 @@
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}
         </destDir>
 
-        <node.version>v6.9.1</node.version>
-        <npm.version>3.10.8</npm.version>
+        <!-- Download https://nodejs.org/dist/v6.11.0/node-v6.11.0-darwin-x64.tar.gz to ~/.m2/repository/com/github/eirslett/node/6.11.0/node-6.11.0-darwin-x64.tar.gz -->
+        <node.version>v6.11.0</node.version>
+        <!--npm.version>3.10.10</npm.version-->
+        <npm.version>5.2.0</npm.version>
     </properties>
 
     <profiles>

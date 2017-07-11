@@ -11,7 +11,6 @@
 
     <artifactId>oss-todomvc-security</artifactId>
     <name>oss-todomvc-security</name>
-    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>

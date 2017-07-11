@@ -90,11 +90,10 @@
 
     <modules>
         <module>oss-todomvc-app</module>
-        <!--module>oss-todomvc-angular</module-->
         <module>oss-todomvc-jquery</module>
         <module>oss-todomvc-react</module>
-        <module>oss-todomvc-sdk</module>
         <module>oss-todomvc-security</module>
+        <module>oss-todomvc-sdk</module>
         <module>oss-todomvc-thymeleaf</module>
         <module>oss-todomvc-gateway</module>
     </modules>
