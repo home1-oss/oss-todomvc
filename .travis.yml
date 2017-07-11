@@ -39,7 +39,7 @@ jdk:
 - oraclejdk8
 language: java
 script:
-- bash ci.sh analysis clean test_and_build publish_site
+- bash ci.sh analysis clean_test_and_build publish_site
 services:
 - docker
 sudo: required

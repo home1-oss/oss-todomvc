@@ -34,7 +34,7 @@ on_non_release_push:
   except:
   - /^release\/.+$/
   script:
-  - bash ci.sh clean test_and_build
+  - bash ci.sh clean_test_and_build
   stage: build
 
 on_release_push:
@@ -44,7 +44,7 @@ on_release_push:
   only:
   - /^release\/.+$/
   script:
-  - bash ci.sh clean test_and_build publish_artifact publish_site
+  - bash ci.sh clean_test_and_build publish_artifact publish_site
   stage: publish
 
 stages:
