@@ -64,7 +64,7 @@ oss-todomvc-jquery 使用传统的多页面方式，通过ajax向后端发起请
 我们建议在前端项目中使用这套与后端类似的目录组织结构。
 + 在src/main目录存放工程文件，如css js html以及图片等静态文件
 + 在src/test目录存放前端的测试文件
-+ 在src/site中存储文档相关，方便构建mvn-sites或者gitbook等静态网站。
++ 在src/site中存储文档相关，方便构建mvnsite或者gitbook等静态网站。
 
 本项目中有一个pom.xml文件，通过maven来管理前端项目，将所有的静态文件打包到target目录的webjars文件中。打包命令与java项目一致：
 

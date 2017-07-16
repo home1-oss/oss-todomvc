@@ -1,8 +1,8 @@
 -----
 如果你正在通过git服务查看此文档，请移步项目网站或gitbook查看文档，因为git服务生成的文档链接有问题。
-+ [gitbook](http://mvn-site.internal/oss-develop/gitbook)
-+ [RELEASE版网站](http://mvn-site.internal/oss/staging)
-+ [SNAPSHOT版网站](http://mvn-site.internal/oss-develop/staging)
++ [gitbook](http://mvnsite.internal/oss-develop/gitbook)
++ [RELEASE版网站](http://mvnsite.internal/oss/staging)
++ [SNAPSHOT版网站](http://mvnsite.internal/oss-develop/staging)
 -----
 
 # oss-todomvc
@@ -94,8 +94,8 @@ oss-todomvc所有的web service统一从configserver拉取配置，使用eureka�
 ### 环境配置及启动 docker 容器
 为方便用户快速接入，我们提供了todomvc系列的docker镜像。用户可以按照如下步骤在本机启动todomvc的docker容器: 
 
-+ 用户首先按照[这篇文档](http://mvn-site.internal/oss-develop/gitbook/docs/oss/CONTRIBUTION.html)设置本机的环境变量
-+ 其次，需要按照[这篇文档](http://mvn-site.internal/oss-develop/gitbook/docs/oss-environment/)设置本机的环境变量，并启动相关的基础服务如configserver、eureka等。
++ 用户首先按照[这篇文档](http://mvnsite.internal/oss-develop/gitbook/docs/oss/CONTRIBUTION.html)设置本机的环境变量
++ 其次，需要按照[这篇文档](http://mvnsite.internal/oss-develop/gitbook/docs/oss-environment/)设置本机的环境变量，并启动相关的基础服务如configserver、eureka等。
 + 最后，在 oss-todomvc 目录通过如下命令启动：
 
     export DOCKER_REGISTRY=<公司内部docker-registry域名> && \
