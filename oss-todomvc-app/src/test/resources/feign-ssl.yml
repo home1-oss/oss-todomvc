@@ -38,7 +38,7 @@ spring.datasource:
   validation-query: 'SELECT 1'
   type: 'com.zaxxer.hikari.HikariDataSource'
   driver-class-name: 'org.h2.Driver'
-  url: 'jdbc:h2:~/data/oss-todomvc-app/h2' #'jdbc:h2:mem:mydb'
+  url: 'jdbc:h2:~/.oss/oss-todomvc-app/h2' #'jdbc:h2:mem:mydb'
   username: sa
   #password:
 

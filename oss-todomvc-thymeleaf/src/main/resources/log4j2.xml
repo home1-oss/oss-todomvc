@@ -4,7 +4,7 @@
 <Configuration status="WARN">
     <Properties>
         <Property name="defaultLoggingFile">oss-todomvc-thymeleaf</Property>
-        <Property name="defaultLoggingPath">${sys:user.home}/data/oss-todomvc-thymeleaf/logs</Property>
+        <Property name="defaultLoggingPath">${sys:user.home}/.oss/oss-todomvc-thymeleaf/logs</Property>
         <!-- https://issues.apache.org/jira/browse/LOG4J2-1589 -->
         <!-- http://logback.qos.ch/manual/configuration.html#nestedSubst -->
         <Property name="loggingFileFromEnv">${env:LOGGING_FILE}</Property>
