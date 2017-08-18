@@ -34,8 +34,6 @@
     <properties>
         <oss-release.version>1.0.6.OSS</oss-release.version>
         <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
-
-        <sonar.java.binaries>**/target/classes</sonar.java.binaries>
     </properties>
 
     <build>
