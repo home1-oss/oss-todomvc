@@ -13,8 +13,8 @@
     <name>oss-todomvc-app</name>
 
     <!--properties>
-        <eureka.service.url>http://user:user_pass@eureka.local:8761/eureka/</eureka.service.url>
-        <configserver.service.id>configserver.local</configserver.service.id>
+        <oss-eureka.service.url>http://user:user_pass@oss-eureka.local:8761/eureka/</oss-eureka.service.url>
+        <oss-configserver.service.id>oss-configserver.local</oss-configserver.service.id>
         <cloudbus.service.url>cloudbus.local</cloudbus.service.url>
     </properties-->
 
@@ -108,10 +108,10 @@
                             <arguments>
                                 <argument>--server.port=${integration.server.port}</argument>
                                 <!--argument>
-                                    \-\-EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=${eureka.service.url}
+                                    \-\-EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=${oss-eureka.service.url}
                                 </argument>
                                 <argument>
-                                    \-\-SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID=${configserver.service.id}
+                                    \-\-SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID=${oss-configserver.service.id}
                                 </argument>
                                 <argument>
                                     \-\-SPRING_RABBITMQ_HOST=${cloudbus.service.url}
@@ -140,8 +140,8 @@
                 <configuration>
                     <systemPropertyVariables>
                         <test.server.port>${integration.server.port}</test.server.port>
-                        <!--EUREKA_CLIENT_SERVICEURL_DEFAULTZONE>${eureka.service.url}</EUREKA_CLIENT_SERVICEURL_DEFAULTZONE>
-                        <SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID>${configserver.service.id}</SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID>
+                        <!--EUREKA_CLIENT_SERVICEURL_DEFAULTZONE>${oss-eureka.service.url}</EUREKA_CLIENT_SERVICEURL_DEFAULTZONE>
+                        <SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID>${oss-configserver.service.id}</SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID>
                         <SPRING_RABBITMQ_HOST>${cloudbus.service.url}</SPRING_RABBITMQ_HOST-->
                     </systemPropertyVariables>
                 </configuration>
@@ -162,8 +162,8 @@
                         <echo>============= DockerProperties =============</echo>
                         <echo>DockerProperty test server port : ${integration.server.port}</echo>
                         <echo>DockerProperty test server port : ${integration.server.port}</echo>
-                        <!--echo>eureka.service.url : ${eureka.service.url}</echo>
-                        <echo>configserver.service.id : ${configserver.service.id}</echo-->
+                        <!--echo>oss-eureka.service.url : ${eureka.service.url}</echo>
+                        <echo>oss-configserver.service.id : ${configserver.service.id}</echo-->
                     </echos>
                 </configuration>
             </plugin>

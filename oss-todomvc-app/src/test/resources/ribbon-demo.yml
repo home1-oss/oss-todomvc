@@ -17,7 +17,7 @@ spring:
 eureka:
   client: 
     serviceUrl:
-      defaultZone: http://user:user_pass@eureka.local:8761/eureka/
+      defaultZone: http://user:user_pass@oss-eureka.local:8761/eureka/
   instance:
     preferIpAddress:  true 
 ribbon:

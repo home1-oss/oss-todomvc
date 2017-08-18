@@ -39,9 +39,9 @@ oss-todomvc大体架构如下所示：
 > + 红色虚线表示服务提供者和消费者在eureka上的注册与发现。  
 > + 橙色的箭头表示web服务从configserver上拉取配置信息。  
 
-### configserver && eureka
+### oss-configserver && oss-eureka
 
-oss-todomvc所有的web service统一从configserver拉取配置，使用eureka作为RPC框架。其中oss-todomvc-app作为服务提供者provider，oss-todomvc-thymeleaf
+oss-todomvc所有的web service统一从oss-configserver拉取配置，使用oss-eureka作为RPC框架。其中oss-todomvc-app作为服务提供者provider，oss-todomvc-thymeleaf
 以及oss-todomvc-gateway作为服务消费者。
 
 + configserver是oss提供的配置中心服务。configserver启动之后会在eureka上注册自身。

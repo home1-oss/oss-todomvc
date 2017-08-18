@@ -9,11 +9,11 @@ export BUILD_PUBLISH_DEPLOY_SEGREGATION="true"
 export BUILD_SITE_PATH_PREFIX="oss"
 
 ## for integration-test
-export EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://user:user_pass@eureka:8761/eureka/"
-export SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID="configserver.local"
+export EUREKA_CLIENT_SERVICEURL_DEFAULTZONE="http://user:user_pass@oss-eureka:8761/eureka/"
+export SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID="oss-configserver.local"
 export SPRING_RABBITMQ_HOST="cloudbus"
 export SPIRNG_RABBITMQ_PORT="5672"
-export CONFIG_SERVER_HOST="configserver"
+export CONFIG_SERVER_HOST="oss-configserver"
 export CONFIG_SERVER_PORT="8888"
 
 ### OSS CI CALL REMOTE CI SCRIPT BEGIN

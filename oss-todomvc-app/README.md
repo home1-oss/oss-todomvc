@@ -14,7 +14,7 @@
 
 ## 服务启动逻辑
 
-+ 首先通过`bootstrap.xml`里的eureka配置，在eureka里找到configserver的地址，从configserver拉取`oss-todomvc-app`的项目配置。
++ 首先通过`bootstrap.xml`里的oss-eureka配置，在oss-eureka里找到oss-configserver的地址，从oss-configserver拉取`oss-todomvc-app`的项目配置。
 + 启动服务
 + 在eureka上注册自身，供服务消费者发现。
 
