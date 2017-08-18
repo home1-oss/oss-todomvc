@@ -5,8 +5,8 @@ analysis:
 
 before_script:
 - export BUILD_SITE=true
-#- export LIB_CI_SCRIPT=https://github.com/home1-oss/oss-build/raw/master/src/main/ci-script/lib_ci.sh
-- export LIB_CI_SCRIPT=http://gitlab.local:10080/home1-oss/oss-build/raw/master/src/main/ci-script/lib_ci.sh
+- export LIB_CI_SCRIPT=https://github.com/home1-oss/oss-build/raw/master/src/main/ci-script/lib_ci.sh
+#- export LIB_CI_SCRIPT=http://gitlab.local:10080/home1-oss/oss-build/raw/master/src/main/ci-script/lib_ci.sh
 - export ORIGIN_REPO_SLUG=home1-oss/oss-todomvc
 
 on_develop_push:
