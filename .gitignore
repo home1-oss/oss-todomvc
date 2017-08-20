@@ -26,9 +26,6 @@ _site/
 **/src/site/markdown/src/readme
 **/src/site/resources
 
-/deprecated/
-LOCAL.md
-
 /**/oss-*/node
 /oss-*/deprecated
 /oss-*/build
