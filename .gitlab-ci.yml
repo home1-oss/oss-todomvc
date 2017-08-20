@@ -28,9 +28,10 @@ on_develop_push:
 #  stage: publish
 
 on_non_release_push:
-#  artifacts:
-#    expire_in: 1 day
-#    untracked: true
+  # pass files between stages
+  artifacts:
+    expire_in: 1 day
+    untracked: true
   except:
   - /^release\/.+$/
   script:
